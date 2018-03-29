@@ -1,0 +1,20 @@
+#服务启动脚本
+composer install
+composer update
+#composer run-script ops-dev-cmd
+
+chmod 777 -R storage
+composer run-script ops-pro-cmd
+
+php artisan migration:install && php artisan migrate:refresh &&  php artisan db:seed
+php artisan queue:work --queue=emails
+php artisan queue:work --queue=default
+
+#保密数据，用后即删
+
+
+
+
+
+
+
