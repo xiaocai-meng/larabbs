@@ -5,8 +5,7 @@ composer update
 
 chmod 777 -R storage
 
-
-php artisan migration:install && php artisan migrate:refresh &&  php artisan db:seed
+php artisan migrate && php artisan migrate:refresh &&  php artisan db:seed
 php artisan queue:work --queue=emails
 php artisan queue:work --queue=default
 
